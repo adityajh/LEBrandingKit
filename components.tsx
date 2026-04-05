@@ -67,3 +67,36 @@ export function Eyebrow({ children, className = '' }: { children: React.ReactNod
     </p>
   );
 }
+
+/**
+ * Hero Campaign Heading
+ * Usage: Massive, unapologetic text for campaign headers (e.g. PROOF > POTENTIAL)
+ */
+export function HeroHeading({ children, className = '' }: { children: React.ReactNode, className?: string }) {
+  return (
+    <h1 className={`font-headline font-black text-5xl md:text-7xl text-[#160E44] uppercase tracking-tight leading-none ${className}`}>
+      {children}
+    </h1>
+  );
+}
+
+/**
+ * Proof Stat Block
+ * Usage: High density evidence block (e.g. "10 Challenges", "15 Months")
+ */
+export function ProofStat({ 
+  value, 
+  label, 
+  className = '' 
+}: { 
+  value: string | number, 
+  label: string, 
+  className?: string 
+}) {
+  return (
+    <div className={`flex flex-col border-l-4 border-[#3663AD] pl-4 ${className}`}>
+      <span className="font-headline font-black text-4xl text-[#3663AD] leading-none mb-1">{value}</span>
+      <span className="text-sm font-bold text-slate-500 uppercase tracking-widest">{label}</span>
+    </div>
+  );
+}

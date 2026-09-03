@@ -36,7 +36,17 @@
   
   --font-headline: 'Prompt', Arial, Helvetica, sans-serif;
   --font-body: 'Supreme', Arial, Helvetica, sans-serif;
-  --font-highlight: 'Acoustica', cursive;
+
+  /* Acoustica has NO accented Latin and NO rupee sign — 119 glyphs, permanent.
+     The fallback is deliberately Prompt and not `cursive`: if a glyph is
+     missing, falling back to a brand face is a visible size change you will
+     notice, while falling back to the system cursive swaps one script face for
+     another mid-word and looks approximately intended. See FONTS.md.
+
+     NEVER set a student's name, a price or any user-supplied string in this
+     face. Size it at 2.0x its companion on a shared baseline — never by eye.
+     See BRANDING_GUIDE.md section 2.1. */
+  --font-highlight: 'Acoustica', 'Prompt', Arial, sans-serif;
 }
 
 body {
